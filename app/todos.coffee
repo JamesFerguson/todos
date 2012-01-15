@@ -23,6 +23,10 @@ module.exports.Task = Task
 class Tasks extends Backbone.Collection
   model: Task
 
+  completed: ->
+    _.select @models, (model) ->
+      model.get('status') == 'completed'
+
 tasks = new Tasks()
 module.exports.tasks = tasks
 # module.exports.Tasks = Tasks
