@@ -16,7 +16,7 @@ class Task extends Backbone.Model
       @set('status': 'completed')
     else
       @set('status': 'incomplete')
-    # @collection.trigger('status-changed')
+    tasks.trigger('status-changed')
 
 module.exports.Task = Task
 
