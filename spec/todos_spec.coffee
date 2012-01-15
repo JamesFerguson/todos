@@ -1,8 +1,3 @@
-should = require 'should'
-
-# _ = require('underscore')._
-# {Model, Collection, Events} = require('../public/javascripts/backbone')
-
 App = require('./../public/javascripts/todos')
 Task = App.Task
 # Tasks = App.Tasks
