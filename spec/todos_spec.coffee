@@ -4,6 +4,7 @@ task = null
 Task = App.Task
 
 # Tasks = App.Tasks
+tasks = App.tasks
 
 describe 'Task', ->
   before ->
@@ -20,7 +21,22 @@ describe 'Task', ->
     task.toggleStatus()
     task.get('status').should.not.equal(oldStatus)
 
-# describe 'Tasks', ->
-#   it 's model is Task', ->
-#     tasks = new Tasks()
-#     tasks.should.have.property('model').obj.should.be.an.instanceof(Task)
+describe 'Tasks', ->
+  it 's model is Task', ->
+    tasks.should.have.property('model').obj.name.should.equal('Task')
+
+  it 'finds completed tasks', ->
+    aye = new Task(name: 'aye', id: tasks.length)
+    aye.save()
+
+    bee = new Task(name: 'bee', id: tasks.length)
+    bee.save()
+    bee.toggleStatus()
+
+    cee = new Task(name: 'cee', id: tasks.length)
+    cee.toggleStatus()
+    cee.save()
+
+    tasks.should.include(bee)
+
+    tasks.completed().should.include(bee)
