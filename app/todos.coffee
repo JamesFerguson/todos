@@ -1,4 +1,5 @@
 Backbone = require('./backbone')
+_ = require('./underscore')._
 
 class Task extends Backbone.Model
   initialize: ->
