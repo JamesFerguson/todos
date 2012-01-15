@@ -1,6 +1,6 @@
 App = require('./../public/javascripts/todos')
 
-task = null
+task = aye = bee = cee = null
 Task = App.Task
 
 # Tasks = App.Tasks
@@ -25,18 +25,31 @@ describe 'Tasks', ->
   it 's model is Task', ->
     tasks.should.have.property('model').obj.name.should.equal('Task')
 
-  it 'finds completed tasks', ->
-    aye = new Task(name: 'aye', id: tasks.length)
-    aye.save()
+  describe 'search methods', ->
+    before ->
+      aye = new Task(name: 'aye', id: tasks.length)
+      aye.save()
 
-    bee = new Task(name: 'bee', id: tasks.length)
-    bee.save()
-    bee.toggleStatus()
+      bee = new Task(name: 'bee', id: tasks.length)
+      bee.save()
+      bee.toggleStatus()
 
-    cee = new Task(name: 'cee', id: tasks.length)
-    cee.toggleStatus()
-    cee.save()
+      cee = new Task(name: 'cee', id: tasks.length)
+      cee.toggleStatus()
+      cee.save()
 
-    tasks.should.include(bee)
+    it 'finds tasks', ->
+      tasks.should.include(aye)
+      tasks.should.include(bee)
+      tasks.should.include(cee)
 
-    tasks.completed().should.include(bee)
+    it 'finds completed tasks', ->
+      tasks.completed().should.not.include(aye)
+      tasks.completed().should.include(bee)
+      tasks.completed().should.include(cee)
+
+    it 'finds incomplete tasks', ->
+      tasks.incomplete().should.include(aye)
+      tasks.incomplete().should.not.include(bee)
+      tasks.incomplete().should.not.include(cee)
+
