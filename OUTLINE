@@ -1,0 +1,17 @@
+Step: 5m - 30m chunk of continguous work; "tune guitar", "get music", "look up demo on YT", "play chords through", "try rythm"
+Task: 30m - 8hr logical unit of work; "practice once"
+Objective: 1 - 4 days of concerted effort; "be able to play 'Elderly Woman' through"
+Project: finite but long lived work effort; "learn to play 10 songs"
+Theme (Epic): a goal, value or wish without limits or concrete definition; "learn guitar"
+
+Context: a circumstance that's required for a task to get done; "personal time"
+
+User: an owner of work items
+Sock Puppet: used to model someone who isn't using the system holding a work item when the user has to followup; the user 
+  still owns the item, this just visualizes what's happening to it; it is a prerequisite that the person the puppet 
+  represents has been informed that they own the task.
+User Group: work items can only be passed within a user group; "<workplace>", "family"
+
+Value (?): cash you would pay (if you could) to have the work item done instantly, in some cases the estimated future
+  time/cost saved by completing the work item - if you estimate the dollar value of your time, the value of a work item 
+  and estimated time required for the item allow you to compare Cost/Benefit and identify 
