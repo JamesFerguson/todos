@@ -20,7 +20,9 @@ class Task extends Backbone.Model
 
 module.exports.Task = Task
 
-# class Tasks extends Backbone.Collection
-#   model: Task
+class Tasks extends Backbone.Collection
+  model: Task
 
+tasks = new Tasks()
+module.exports.tasks = tasks
 # module.exports.Tasks = Tasks
